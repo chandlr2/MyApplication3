@@ -1,0 +1,2505 @@
+package com.example.chandler.myapplication;
+
+import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import java.net.URISyntaxException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.LinkedBlockingDeque;
+
+import java.util.*;
+
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.DefaultConsumer;
+import com.rabbitmq.client.QueueingConsumer;
+import com.rabbitmq.client.AMQP.Queue.DeclareOk;
+
+import android.app.Activity;
+
+import android.os.Handler;
+import android.app.Activity;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    ImageButton blue_ranger;
+    ImageButton blue_war;
+    ImageButton blue_s;
+
+    boolean blueranger_enabled = false;
+    boolean bluewarrior_enabled = false;
+    boolean bluesorc_enabled = false;
+
+    ImageButton red_ranger;
+    ImageButton red_war;
+    ImageButton red_s;
+
+    boolean redranger_enabled = false;
+    boolean redwarrior_enabled = false;
+    boolean redsorc_enabled = false;
+
+
+    ImageButton _1,_2,_3,_4,_5,_6,_7,_8;
+    ImageButton _9,_10,_11,_12,_13,_14,_15,_16;
+    ImageButton _17,_18,_19,_20,_21,_22,_23,_24;
+    ImageButton _25,_26,_27,_28,_29,_30,_31,_32;
+    ImageButton _33,_34,_35,_36,_37,_38,_39,_40;
+    ImageButton _41,_42,_43,_44,_45,_46,_47,_48;
+    ImageButton _49,_50,_51,_52,_53,_54,_55,_56;
+    ImageButton _57,_58,_59,_60,_61,_62,_63,_64;
+
+    ImageButton s1;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        _1 = (ImageButton) findViewById(R.id.imageButton1);
+        _2 = (ImageButton) findViewById(R.id.imageButton2);
+        _3 = (ImageButton) findViewById(R.id.imageButton3);
+        _4 = (ImageButton) findViewById(R.id.imageButton4);
+        _5 = (ImageButton) findViewById(R.id.imageButton5);
+        _6 = (ImageButton) findViewById(R.id.imageButton6);
+        _7 = (ImageButton) findViewById(R.id.imageButton7);
+        _8 = (ImageButton) findViewById(R.id.imageButton8);
+        _9 = (ImageButton) findViewById(R.id.imageButton9);
+        _10 = (ImageButton) findViewById(R.id.imageButton10);
+        _11 = (ImageButton) findViewById(R.id.imageButton11);
+        _12 = (ImageButton) findViewById(R.id.imageButton12);
+        _13 = (ImageButton) findViewById(R.id.imageButton13);
+        _14 = (ImageButton) findViewById(R.id.imageButton14);
+        _15 = (ImageButton) findViewById(R.id.imageButton15);
+        _16 = (ImageButton) findViewById(R.id.imageButton16);
+        _17 = (ImageButton) findViewById(R.id.imageButton17);
+        _18 = (ImageButton) findViewById(R.id.imageButton18);
+        _19 = (ImageButton) findViewById(R.id.imageButton19);
+        _20 = (ImageButton) findViewById(R.id.imageButton20);
+        _21 = (ImageButton) findViewById(R.id.imageButton21);
+        _22 = (ImageButton) findViewById(R.id.imageButton22);
+        _23 = (ImageButton) findViewById(R.id.imageButton23);
+        _24 = (ImageButton) findViewById(R.id.imageButton24);
+        _25 = (ImageButton) findViewById(R.id.imageButton25);
+        _26 = (ImageButton) findViewById(R.id.imageButton26);
+        _27 = (ImageButton) findViewById(R.id.imageButton27);
+        _28 = (ImageButton) findViewById(R.id.imageButton28);
+        _29 = (ImageButton) findViewById(R.id.imageButton29);
+        _30 = (ImageButton) findViewById(R.id.imageButton30);
+        _31 = (ImageButton) findViewById(R.id.imageButton31);
+        _32 = (ImageButton) findViewById(R.id.imageButton32);
+        _33 = (ImageButton) findViewById(R.id.imageButton33);
+        _34 = (ImageButton) findViewById(R.id.imageButton34);
+        _35 = (ImageButton) findViewById(R.id.imageButton35);
+        _36 = (ImageButton) findViewById(R.id.imageButton36);
+        _37 = (ImageButton) findViewById(R.id.imageButton37);
+        _38 = (ImageButton) findViewById(R.id.imageButton38);
+        _39 = (ImageButton) findViewById(R.id.imageButton39);
+        _40 = (ImageButton) findViewById(R.id.imageButton40);
+        _41 = (ImageButton) findViewById(R.id.imageButton41);
+        _42 = (ImageButton) findViewById(R.id.imageButton42);
+        _43 = (ImageButton) findViewById(R.id.imageButton43);
+        _44 = (ImageButton) findViewById(R.id.imageButton44);
+        _45 = (ImageButton) findViewById(R.id.imageButton45);
+        _46 = (ImageButton) findViewById(R.id.imageButton46);
+        _47 = (ImageButton) findViewById(R.id.imageButton47);
+        _48 = (ImageButton) findViewById(R.id.imageButton48);
+        _49 = (ImageButton) findViewById(R.id.imageButton49);
+        _50 = (ImageButton) findViewById(R.id.imageButton50);
+        _51 = (ImageButton) findViewById(R.id.imageButton51);
+        _52 = (ImageButton) findViewById(R.id.imageButton52);
+        _53 = (ImageButton) findViewById(R.id.imageButton53);
+        _54 = (ImageButton) findViewById(R.id.imageButton54);
+        _55 = (ImageButton) findViewById(R.id.imageButton55);
+        _56 = (ImageButton) findViewById(R.id.imageButton56);
+        _57 = (ImageButton) findViewById(R.id.imageButton57);
+        _58 = (ImageButton) findViewById(R.id.imageButton58);
+        _59 = (ImageButton) findViewById(R.id.imageButton59);
+        _60 = (ImageButton) findViewById(R.id.imageButton60);
+        _61 = (ImageButton) findViewById(R.id.imageButton61);
+        _62 = (ImageButton) findViewById(R.id.imageButton62);
+        _63 = (ImageButton) findViewById(R.id.imageButton63);
+        _64 = (ImageButton) findViewById(R.id.imageButton64);
+
+
+
+        /*for(int i = 1; i<64;i++){
+            String _id = "_"+i;
+           _id = (ImageButton) findViewById(R.id.('imageButton' + i);
+        }*/
+
+        blue_ranger = (ImageButton) findViewById(R.id.blueranger);
+        blue_ranger.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+            // _1.setVisibility(View.VISIBLE);
+             if(blueranger_enabled == false){
+                 blueranger_enabled = true;
+                 //publishToAMQP("r");
+                 //toggle visibility
+                 bluesorc_enabled = false;
+                 bluewarrior_enabled = false;
+             }
+             else{
+                 blueranger_enabled = false;
+             }
+        }
+                                              });
+
+        /*THIS IS # 1 listener*/
+
+        blue_war = (ImageButton) findViewById(R.id.bluewarrior);
+        blue_war.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+               // _1.setVisibility(View.VISIBLE);
+                if(bluewarrior_enabled == false){
+                    bluewarrior_enabled = true;
+                    publishToAMQP("w");
+                }
+                else{
+                    bluewarrior_enabled = false;
+                }
+            }
+        });
+
+        blue_s = (ImageButton) findViewById(R.id.bluesorceress);
+        blue_s.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+              //  _1.setVisibility(View.VISIBLE);
+                if(bluesorc_enabled == false){
+                    bluesorc_enabled = true;
+                    publishToAMQP("s");
+                }
+                else{
+                    bluesorc_enabled = false;
+                }
+            }
+        });
+
+        red_ranger = (ImageButton) findViewById(R.id.redranger);
+        red_ranger.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+               // _1.setVisibility(View.VISIBLE);
+                if(redranger_enabled == false){
+                    redranger_enabled = true;
+                }
+                else{
+                    redranger_enabled = false;
+                }
+            }
+        });
+
+        red_war = (ImageButton) findViewById(R.id.redwarrior);
+        red_war.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+               // _1.setVisibility(View.VISIBLE);
+                if(redwarrior_enabled == false){
+                    redwarrior_enabled = true;
+                }
+                else{
+                    redwarrior_enabled = false;
+                }
+            }
+        });
+
+        red_s = (ImageButton) findViewById(R.id.redsorceress);
+        red_s.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+               // _1.setVisibility(View.VISIBLE);
+                if(redsorc_enabled == false){
+                    redsorc_enabled = true;
+                }
+                else{
+                    redsorc_enabled = false;
+                }
+            }
+        });
+        
+        
+        
+        
+        _1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if (bluewarrior_enabled == true && isMovable(_1)){
+                    blue_war.setX(_1.getX() - 5);
+                    blue_war.setY(_1.getY() - 5);
+                    _1.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_1.getX() - 5);
+                    blue_s.setY(_1.getY() - 5);
+
+                    _1.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_1.getX() - 5);
+                    blue_ranger.setY(_1.getY() - 5);
+                    _1.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+              /*  if(redwarrior_enabled == true){
+                    red_war.setX(_1.getX() - 5);
+                    red_war.setY(_1.getY() - 5);
+                    _1.setVisibility(View.VISIBLE);
+                    redwarrior_enabled = false;
+                }
+                if(redsorc_enabled == true){
+                    red_s.setX(_1.getX() - 5);
+                    red_s.setY(_1.getY() - 5);
+                    _1.setVisibility(View.VISIBLE);
+                    redsorc_enabled = false;
+                }
+                if(redranger_enabled == true){
+                    red_ranger.setX(_1.getX() - 5);
+                    red_ranger.setY(_1.getY() - 5);
+                    _1.setVisibility(View.VISIBLE);
+                    redranger_enabled = false;
+                }
+                */
+            }
+                                });
+
+        _2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_2))){
+                    blue_war.setX(_2.getX() - 5);
+                    blue_war.setY(_2.getY() - 5);
+                    _2.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_2.getX() - 5);
+                    blue_s.setY(_2.getY() - 5);
+                    _2.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_2.getX() - 5);
+                    blue_ranger.setY(_2.getY() - 5);
+                    _2.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+
+            }
+        });
+
+        _3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_3))){
+                    blue_war.setX(_3.getX() - 5);
+                    blue_war.setY(_3.getY() - 5);
+                    _3.setVisibility(View.VISIBLE);
+                   // _3.setForeground(_3.getForeground());
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_3.getX() - 5);
+                    blue_s.setY(_3.getY() - 5);
+                    _3.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_3.getX() - 5);
+                    blue_ranger.setY(_3.getY() - 5);
+                    _3.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+
+        _4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_4))){
+                    blue_war.setX(_4.getX() - 5);
+                    blue_war.setY(_4.getY() - 5);
+                    _4.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_4.getX() - 5);
+                    blue_s.setY(_4.getY() - 5);
+                    _4.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_4.getX() - 5);
+                    blue_ranger.setY(_4.getY() - 5);
+                    _4.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+
+        _5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_5))){
+                    blue_war.setX(_5.getX() - 5);
+                    blue_war.setY(_5.getY() - 5);
+                    _5.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_5.getX() - 5);
+                    blue_s.setY(_5.getY() - 5);
+                    _5.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_5.getX() - 5);
+                    blue_ranger.setY(_5.getY() - 5);
+                    _5.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_6))){
+                    blue_war.setX(_6.getX() - 5);
+                    blue_war.setY(_6.getY() - 5);
+                    _6.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_6.getX() - 5);
+                    blue_s.setY(_6.getY() - 5);
+                    _6.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_6.getX() - 5);
+                    blue_ranger.setY(_6.getY() - 5);
+                    _6.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _7.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_7))){
+                    blue_war.setX(_7.getX() - 5);
+                    blue_war.setY(_7.getY() - 5);
+                    _7.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_7.getX() - 5);
+                    blue_s.setY(_7.getY() - 5);
+                    _7.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_7.getX() - 5);
+                    blue_ranger.setY(_7.getY() - 5);
+                    _7.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _8.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_8))){
+                    blue_war.setX(_8.getX() - 5);
+                    blue_war.setY(_8.getY() - 5);
+                    _8.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_8.getX() - 5);
+                    blue_s.setY(_8.getY() - 5);
+                    _8.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_8.getX() - 5);
+                    blue_ranger.setY(_8.getY() - 5);
+                    _8.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _9.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_9))){
+                    blue_war.setX(_9.getX() - 5);
+                    blue_war.setY(_9.getY() - 5);
+                    _9.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_9.getX() - 5);
+                    blue_s.setY(_9.getY() - 5);
+                    _9.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_9.getX() - 5);
+                    blue_ranger.setY(_9.getY() - 5);
+                    _9.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _10.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_10))){
+                    blue_war.setX(_10.getX() - 5);
+                    blue_war.setY(_10.getY() - 5);
+                    _10.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_10.getX() - 5);
+                    blue_s.setY(_10.getY() - 5);
+                    _10.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_10.getX() - 5);
+                    blue_ranger.setY(_10.getY() - 5);
+                    _10.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _11.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_11))){
+                    blue_war.setX(_11.getX() - 5);
+                    blue_war.setY(_11.getY() - 5);
+                    _11.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_11.getX() - 5);
+                    blue_s.setY(_11.getY() - 5);
+                    _11.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_11.getX() - 5);
+                    blue_ranger.setY(_11.getY() - 5);
+                    _11.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _12.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_12))){
+                    blue_war.setX(_12.getX() - 5);
+                    blue_war.setY(_12.getY() - 5);
+                    _12.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_12.getX() - 5);
+                    blue_s.setY(_12.getY() - 5);
+                    _12.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_12.getX() - 5);
+                    blue_ranger.setY(_12.getY() - 5);
+                    _12.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _13.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_13))){
+                    blue_war.setX(_13.getX() - 5);
+                    blue_war.setY(_13.getY() - 5);
+                    _13.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_13.getX() - 5);
+                    blue_s.setY(_13.getY() - 5);
+                    _13.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_13.getX() - 5);
+                    blue_ranger.setY(_13.getY() - 5);
+                    _13.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _14.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_14))){
+                    blue_war.setX(_14.getX() - 5);
+                    blue_war.setY(_14.getY() - 5);
+                    _14.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_14.getX() - 5);
+                    blue_s.setY(_14.getY() - 5);
+                    _14.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_14.getX() - 5);
+                    blue_ranger.setY(_14.getY() - 5);
+                    _14.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _15.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_15))){
+                    blue_war.setX(_15.getX() - 5);
+                    blue_war.setY(_15.getY() - 5);
+                    _15.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_15.getX() - 5);
+                    blue_s.setY(_15.getY() - 5);
+                    _15.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_15.getX() - 5);
+                    blue_ranger.setY(_15.getY() - 5);
+                    _15.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _16.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_16))){
+                    blue_war.setX(_16.getX() - 5);
+                    blue_war.setY(_16.getY() - 5);
+                    _16.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_16.getX() - 5);
+                    blue_s.setY(_16.getY() - 5);
+                    _16.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_16.getX() - 5);
+                    blue_ranger.setY(_16.getY() - 5);
+                    _16.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _17.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_17))){
+                    blue_war.setX(_17.getX() - 5);
+                    blue_war.setY(_17.getY() - 5);
+                    _17.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_17.getX() - 5);
+                    blue_s.setY(_17.getY() - 5);
+                    _17.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_17.getX() - 5);
+                    blue_ranger.setY(_17.getY() - 5);
+                    _17.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _18.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_18))){
+                    blue_war.setX(_18.getX() - 5);
+                    blue_war.setY(_18.getY() - 5);
+                    _18.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_18.getX() - 5);
+                    blue_s.setY(_18.getY() - 5);
+                    _18.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_18.getX() - 5);
+                    blue_ranger.setY(_18.getY() - 5);
+                    _18.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _19.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_19))){
+                    blue_war.setX(_19.getX() - 5);
+                    blue_war.setY(_19.getY() - 5);
+                    _19.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_19.getX() - 5);
+                    blue_s.setY(_19.getY() - 5);
+                    _19.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_19.getX() - 5);
+                    blue_ranger.setY(_19.getY() - 5);
+                    _19.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _20.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_20))){
+                    blue_war.setX(_20.getX() - 5);
+                    blue_war.setY(_20.getY() - 5);
+                    _20.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_20.getX() - 5);
+                    blue_s.setY(_20.getY() - 5);
+                    _20.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_20.getX() - 5);
+                    blue_ranger.setY(_20.getY() - 5);
+                    _20.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _21.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_21))){
+                    blue_war.setX(_21.getX() - 5);
+                    blue_war.setY(_21.getY() - 5);
+                    _21.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_21.getX() - 5);
+                    blue_s.setY(_21.getY() - 5);
+                    _21.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_21.getX() - 5);
+                    blue_ranger.setY(_21.getY() - 5);
+                    _21.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _22.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_22))){
+                    blue_war.setX(_22.getX() - 5);
+                    blue_war.setY(_22.getY() - 5);
+                    _22.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_22.getX() - 5);
+                    blue_s.setY(_22.getY() - 5);
+                    _22.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_22.getX() - 5);
+                    blue_ranger.setY(_22.getY() - 5);
+                    _22.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _23.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_23))){
+                    blue_war.setX(_23.getX() - 5);
+                    blue_war.setY(_23.getY() - 5);
+                    _23.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_23.getX() - 5);
+                    blue_s.setY(_23.getY() - 5);
+                    _23.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_23.getX() - 5);
+                    blue_ranger.setY(_23.getY() - 5);
+                    _23.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _24.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_24))){
+                    blue_war.setX(_24.getX() - 5);
+                    blue_war.setY(_24.getY() - 5);
+                    _24.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_24.getX() - 5);
+                    blue_s.setY(_24.getY() - 5);
+                    _24.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_24.getX() - 5);
+                    blue_ranger.setY(_24.getY() - 5);
+                    _24.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _25.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_25))){
+                    blue_war.setX(_25.getX() - 5);
+                    blue_war.setY(_25.getY() - 5);
+                    _25.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_25.getX() - 5);
+                    blue_s.setY(_25.getY() - 5);
+                    _25.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_25.getX() - 5);
+                    blue_ranger.setY(_25.getY() - 5);
+                    _25.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _26.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_26))){
+                    blue_war.setX(_26.getX() - 5);
+                    blue_war.setY(_26.getY() - 5);
+                    _26.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_26.getX() - 5);
+                    blue_s.setY(_26.getY() - 5);
+                    _26.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_26.getX() - 5);
+                    blue_ranger.setY(_26.getY() - 5);
+                    _26.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _27.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_27))){
+                    blue_war.setX(_27.getX() - 5);
+                    blue_war.setY(_27.getY() - 5);
+                    _27.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_27.getX() - 5);
+                    blue_s.setY(_27.getY() - 5);
+                    _27.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_27.getX() - 5);
+                    blue_ranger.setY(_27.getY() - 5);
+                    _27.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _28.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_28))){
+                    blue_war.setX(_28.getX() - 5);
+                    blue_war.setY(_28.getY() - 5);
+                    _28.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_28.getX() - 5);
+                    blue_s.setY(_28.getY() - 5);
+                    _28.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_28.getX() - 5);
+                    blue_ranger.setY(_28.getY() - 5);
+                    _28.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _29.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_29))){
+                    blue_war.setX(_29.getX() - 5);
+                    blue_war.setY(_1.getY() - 5);
+                    _29.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_29.getX() - 5);
+                    blue_s.setY(_29.getY() - 5);
+                    _29.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_29.getX() - 5);
+                    blue_ranger.setY(_29.getY() - 5);
+                    _29.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _30.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_30))){
+                    blue_war.setX(_30.getX() - 5);
+                    blue_war.setY(_30.getY() - 5);
+                    _30.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_30.getX() - 5);
+                    blue_s.setY(_30.getY() - 5);
+                    _30.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_30.getX() - 5);
+                    blue_ranger.setY(_30.getY() - 5);
+                    _30.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+
+        _31.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_31))){
+                    blue_war.setX(_31.getX() - 5);
+                    blue_war.setY(_31.getY() - 5);
+                    _31.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_31.getX() - 5);
+                    blue_s.setY(_31.getY() - 5);
+                    _31.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_31.getX() - 5);
+                    blue_ranger.setY(_31.getY() - 5);
+                    _31.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _32.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_32))){
+                    blue_war.setX(_32.getX() - 5);
+                    blue_war.setY(_32.getY() - 5);
+                    _32.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_32.getX() - 5);
+                    blue_s.setY(_32.getY() - 5);
+                    _32.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_32.getX() - 5);
+                    blue_ranger.setY(_32.getY() - 5);
+                    _32.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _33.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_33))){
+                    blue_war.setX(_33.getX() - 5);
+                    blue_war.setY(_33.getY() - 5);
+                    _33.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_33.getX() - 5);
+                    blue_s.setY(_33.getY() - 5);
+                    _33.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_33.getX() - 5);
+                    blue_ranger.setY(_33.getY() - 5);
+                    _33.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _34.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_34))){
+                    blue_war.setX(_34.getX() - 5);
+                    blue_war.setY(_34.getY() - 5);
+                    _34.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_34.getX() - 5);
+                    blue_s.setY(_34.getY() - 5);
+                    _34.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_34.getX() - 5);
+                    blue_ranger.setY(_34.getY() - 5);
+                    _34.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _35.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_35))){
+                    blue_war.setX(_35.getX() - 5);
+                    blue_war.setY(_35.getY() - 5);
+                    _35.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_35.getX() - 5);
+                    blue_s.setY(_35.getY() - 5);
+                    _35.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_35.getX() - 5);
+                    blue_ranger.setY(_35.getY() - 5);
+                    _35.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _36.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_36))){
+                    blue_war.setX(_36.getX() - 5);
+                    blue_war.setY(_36.getY() - 5);
+                    _36.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_36.getX() - 5);
+                    blue_s.setY(_36.getY() - 5);
+                    _36.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_36.getX() - 5);
+                    blue_ranger.setY(_36.getY() - 5);
+                    _36.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _37.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if (bluewarrior_enabled == true && isMovable(_37)){
+                    blue_war.setX(_37.getX() - 5);
+                    blue_war.setY(_37.getY() - 5);
+                    _37.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_37.getX() - 5);
+                    blue_s.setY(_37.getY() - 5);
+                    _37.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_37.getX() - 5);
+                    blue_ranger.setY(_37.getY() - 5);
+                    _37.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _38.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_38))){
+                    blue_war.setX(_38.getX() - 5);
+                    blue_war.setY(_38.getY() - 5);
+                    _38.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_38.getX() - 5);
+                    blue_s.setY(_38.getY() - 5);
+                    _38.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_38.getX() - 5);
+                    blue_ranger.setY(_38.getY() - 5);
+                    _38.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _39.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_39))){
+                    blue_war.setX(_39.getX() - 5);
+                    blue_war.setY(_39.getY() - 5);
+                    _39.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_39.getX() - 5);
+                    blue_s.setY(_39.getY() - 5);
+                    _39.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_39.getX() - 5);
+                    blue_ranger.setY(_39.getY() - 5);
+                    _39.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _40.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_40))){
+                    blue_war.setX(_40.getX() - 5);
+                    blue_war.setY(_40.getY() - 5);
+                    _40.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_40.getX() - 5);
+                    blue_s.setY(_40.getY() - 5);
+                    _40.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_40.getX() - 5);
+                    blue_ranger.setY(_40.getY() - 5);
+                    _40.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _41.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_41))){
+                    blue_war.setX(_41.getX() - 5);
+                    blue_war.setY(_41.getY() - 5);
+                    _41.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_41.getX() - 5);
+                    blue_s.setY(_41.getY() - 5);
+                    _41.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_41.getX() - 5);
+                    blue_ranger.setY(_41.getY() - 5);
+                    _41.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _42.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_42))){
+                    blue_war.setX(_42.getX() - 5);
+                    blue_war.setY(_42.getY() - 5);
+                    _42.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_42.getX() - 5);
+                    blue_s.setY(_42.getY() - 5);
+                    _42.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_42.getX() - 5);
+                    blue_ranger.setY(_42.getY() - 5);
+                    _42.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _43.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_43))){
+                    blue_war.setX(_43.getX() - 5);
+                    blue_war.setY(_43.getY() - 5);
+                    _43.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_43.getX() - 5);
+                    blue_s.setY(_43.getY() - 5);
+                    _43.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_43.getX() - 5);
+                    blue_ranger.setY(_43.getY() - 5);
+                    _43.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _44.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_44))){
+                    blue_war.setX(_44.getX() - 5);
+                    blue_war.setY(_44.getY() - 5);
+                    _44.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_44.getX() - 5);
+                    blue_s.setY(_44.getY() - 5);
+                    _44.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_44.getX() - 5);
+                    blue_ranger.setY(_44.getY() - 5);
+                    _44.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _45.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_45))){
+                    blue_war.setX(_45.getX() - 5);
+                    blue_war.setY(_45.getY() - 5);
+                    _45.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_45.getX() - 5);
+                    blue_s.setY(_45.getY() - 5);
+                    _45.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_45.getX() - 5);
+                    blue_ranger.setY(_45.getY() - 5);
+                    _45.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _46.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_46))){
+                    blue_war.setX(_46.getX() - 5);
+                    blue_war.setY(_46.getY() - 5);
+                    _46.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_46.getX() - 5);
+                    blue_s.setY(_46.getY() - 5);
+                    _46.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_46.getX() - 5);
+                    blue_ranger.setY(_46.getY() - 5);
+                    _46.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _47.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_47))){
+                    blue_war.setX(_47.getX() - 5);
+                    blue_war.setY(_47.getY() - 5);
+                    _47.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_47.getX() - 5);
+                    blue_s.setY(_47.getY() - 5);
+                    _47.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_47.getX() - 5);
+                    blue_ranger.setY(_47.getY() - 5);
+                    _47.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _48.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_48))){
+                    blue_war.setX(_48.getX() - 5);
+                    blue_war.setY(_48.getY() - 5);
+                    _48.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_48.getX() - 5);
+                    blue_s.setY(_48.getY() - 5);
+                    _48.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_48.getX() - 5);
+                    blue_ranger.setY(_48.getY() - 5);
+                    _48.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _49.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_49))){
+                    blue_war.setX(_49.getX() - 5);
+                    blue_war.setY(_49.getY() - 5);
+                    _49.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_49.getX() - 5);
+                    blue_s.setY(_49.getY() - 5);
+                    _49.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_49.getX() - 5);
+                    blue_ranger.setY(_49.getY() - 5);
+                    _49.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _50.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_50))){
+                    blue_war.setX(_50.getX() - 5);
+                    blue_war.setY(_50.getY() - 5);
+                    _50.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_50.getX() - 5);
+                    blue_s.setY(_50.getY() - 5);
+                    _50.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_50.getX() - 5);
+                    blue_ranger.setY(_50.getY() - 5);
+                    _50.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _51.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_51))){
+                    blue_war.setX(_51.getX() - 5);
+                    blue_war.setY(_51.getY() - 5);
+                    _51.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_51.getX() - 5);
+                    blue_s.setY(_51.getY() - 5);
+                    _51.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_51.getX() - 5);
+                    blue_ranger.setY(_51.getY() - 5);
+                    _51.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _52.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_52))){
+                    blue_war.setX(_52.getX() - 5);
+                    blue_war.setY(_52.getY() - 5);
+                    _52.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_52.getX() - 5);
+                    blue_s.setY(_52.getY() - 5);
+                    _52.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_52.getX() - 5);
+                    blue_ranger.setY(_52.getY() - 5);
+                    _52.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _53.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_53))){
+                    blue_war.setX(_53.getX() - 5);
+                    blue_war.setY(_53.getY() - 5);
+                    _53.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_53.getX() - 5);
+                    blue_s.setY(_53.getY() - 5);
+                    _53.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_53.getX() - 5);
+                    blue_ranger.setY(_53.getY() - 5);
+                    _53.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _54.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_54))){
+                    blue_war.setX(_54.getX() - 5);
+                    blue_war.setY(_54.getY() - 5);
+                    _54.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_54.getX() - 5);
+                    blue_s.setY(_54.getY() - 5);
+                    _54.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_54.getX() - 5);
+                    blue_ranger.setY(_54.getY() - 5);
+                    _54.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _55.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_55))){
+                    blue_war.setX(_55.getX() - 5);
+                    blue_war.setY(_55.getY() - 5);
+                    _55.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_55.getX() - 5);
+                    blue_s.setY(_55.getY() - 5);
+                    _55.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_55.getX() - 5);
+                    blue_ranger.setY(_55.getY() - 5);
+                    _55.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _56.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_56))){
+                    blue_war.setX(_56.getX() - 5);
+                    blue_war.setY(_56.getY() - 5);
+                    _56.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_56.getX() - 5);
+                    blue_s.setY(_56.getY() - 5);
+                    _56.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_56.getX() - 5);
+                    blue_ranger.setY(_56.getY() - 5);
+                    _56.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _57.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_57))){
+                    blue_war.setX(_57.getX() - 5);
+                    blue_war.setY(_57.getY() - 5);
+                    _57.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_57.getX() - 5);
+                    blue_s.setY(_57.getY() - 5);
+                    _57.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_57.getX() - 5);
+                    blue_ranger.setY(_57.getY() - 5);
+                    _57.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _58.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_58))){
+                    blue_war.setX(_58.getX() - 5);
+                    blue_war.setY(_58.getY() - 5);
+                    _58.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_58.getX() - 5);
+                    blue_s.setY(_58.getY() - 5);
+                    _58.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_58.getX() - 5);
+                    blue_ranger.setY(_58.getY() - 5);
+                    _58.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _59.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_59))){
+                    blue_war.setX(_59.getX() - 5);
+                    blue_war.setY(_59.getY() - 5);
+                    _59.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_59.getX() - 5);
+                    blue_s.setY(_59.getY() - 5);
+                    _59.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_59.getX() - 5);
+                    blue_ranger.setY(_59.getY() - 5);
+                    _59.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _60.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_60))){
+                    blue_war.setX(_60.getX() - 5);
+                    blue_war.setY(_60.getY() - 5);
+                    _60.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_60.getX() - 5);
+                    blue_s.setY(_60.getY() - 5);
+                    _60.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_60.getX() - 5);
+                    blue_ranger.setY(_60.getY() - 5);
+                    _60.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _61.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_61))){
+                    blue_war.setX(_61.getX() - 5);
+                    blue_war.setY(_61.getY() - 5);
+                    _61.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_61.getX() - 5);
+                    blue_s.setY(_61.getY() - 5);
+                    _61.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_61.getX() - 5);
+                    blue_ranger.setY(_61.getY() - 5);
+                    _61.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _62.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_62))){
+                    blue_war.setX(_62.getX() - 5);
+                    blue_war.setY(_62.getY() - 5);
+                    _62.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_62.getX() - 5);
+                    blue_s.setY(_62.getY() - 5);
+                    _62.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_62.getX() - 5);
+                    blue_ranger.setY(_62.getY() - 5);
+                    _62.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _63.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_63))){
+                    blue_war.setX(_63.getX() - 5);
+                    blue_war.setY(_63.getY() - 5);
+                    _63.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_63.getX() - 5);
+                    blue_s.setY(_63.getY() - 5);
+                    _63.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_63.getX() - 5);
+                    blue_ranger.setY(_63.getY() - 5);
+                    _63.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+        _64.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if ((bluewarrior_enabled == true) && (isMovable(_64))){
+                    blue_war.setX(_64.getX() - 5);
+                    blue_war.setY(_64.getY() - 5);
+                    _64.setVisibility(View.VISIBLE);
+                    bluewarrior_enabled = false;
+                }
+                if(bluesorc_enabled == true){
+                    blue_s.setX(_64.getX() - 5);
+                    blue_s.setY(_64.getY() - 5);
+                    _64.setVisibility(View.VISIBLE);
+                    bluesorc_enabled = false;
+                }
+                if(blueranger_enabled == true){
+                    blue_ranger.setX(_64.getX() - 5);
+                    blue_ranger.setY(_64.getY() - 5);
+                    _64.setVisibility(View.VISIBLE);
+                    blueranger_enabled = false;
+                }
+            }
+        });
+
+        setupConnectionFactory();
+        //publishToAMQP("player1");
+        setupPubButton();
+
+        final Handler incomingMessageHandler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                String message = msg.getData().getString("msg");
+                TextView tv = (TextView) findViewById(R.id.textView);
+                Date now = new Date();
+                SimpleDateFormat ft = new SimpleDateFormat ("hh:mm:ss");
+                tv.setText(message);
+                set_gameBoard(message);
+
+            }
+        };
+        subscribe(incomingMessageHandler);
+    }
+
+    void set_gameBoard(String layout){
+        Drawable forest = getResources().getDrawable(R.drawable.forest);
+        Drawable lake = getResources().getDrawable(R.drawable.lake);
+        Drawable mountains = getResources().getDrawable(R.drawable.mountains);
+        Drawable plains = getResources().getDrawable(R.drawable.plains);
+
+
+        Drawable rforest = getResources().getDrawable(R.drawable.forest_);
+        Drawable rlake = getResources().getDrawable(R.drawable.lake_);
+        Drawable rmountains = getResources().getDrawable(R.drawable.mountains_);
+        Drawable rplains = getResources().getDrawable(R.drawable.plains_);
+
+        //String delim = "[["]]";
+        String[] tokens = layout.split("\"");
+        TextView blah = (TextView) findViewById(R.id.textView);
+        //blah.setText(tokens[0]);
+        for (int i =0 ; i< 64;i++){
+            //blah.append(" " + i + ".) " + "*" + tokens[i] + "*");
+            String id_ = "imageButton" + String.valueOf(i+1);
+            Log.d("hello","id_: "+ id_);
+            int Resid = getResources().getIdentifier(id_, "id", getPackageName());
+            Log.d("hello", "set_gameBoard: "+String.valueOf(Resid));
+            ImageButton button = (ImageButton) findViewById(Resid);
+
+            if (i<49) {
+
+                if (tokens[(i * 4) + 3].equals("plains"))
+                    button.setForeground(plains);
+                else if (tokens[(i * 4) + 3].equals("forest"))
+                    button.setForeground(forest);
+                else if (tokens[(i * 4) + 3].equals("lake"))
+                    button.setForeground(lake);
+                else
+                    button.setForeground(mountains);
+            }
+            else{
+                if (tokens[(i * 4) + 3].equals("plains"))
+                    button.setForeground(rplains);
+                else if (tokens[(i * 4) + 3].equals("forest"))
+                    button.setForeground(rforest);
+                else if (tokens[(i * 4) + 3].equals("lake"))
+                    button.setForeground(rlake);
+                else
+                    button.setForeground(rmountains);
+            }
+
+
+        }
+
+
+       /* if (tokens[3].equals("plains"))
+            _1.setForeground(plains);
+        else if (tokens[3].equals("forest"))
+            _1.setForeground(forest);
+        else if (tokens[3].equals("lake"))
+            _1.setForeground(lake);
+        else
+            _1.setForeground(mountains);
+
+        if (tokens[7].equals("plains"))
+            _2.setForeground(plains);
+        else if (tokens[7].equals("forest"))
+            _2.setForeground(forest);
+        else if (tokens[7].equals("lake"))
+            _2.setForeground(lake);
+        else
+            _2.setForeground(mountains);
+
+        if (tokens[11].equals("plains"))
+            _3.setForeground(plains);
+        else if (tokens[11] == "forest")
+            _3.setForeground(plains);
+        else if (tokens[11] == "lake")
+            _3.setForeground(lake);
+        else
+            _3.setForeground(mountains);
+
+        if (tokens[15].equals("plains"))
+            _4.setForeground(plains);
+        else if (tokens[15] == "forest")
+            _4.setForeground(plains);
+        else if (tokens[15] == "lake")
+            _4.setForeground(lake);
+        else
+            _4.setForeground(mountains);
+
+        if (tokens[19].equals("plains"))
+            _5.setForeground(plains);
+        else if (tokens[19] == "forest")
+            _5.setForeground(plains);
+        else if (tokens[19] == "lake")
+            _5.setForeground(lake);
+        else
+            _5.setForeground(mountains);
+
+        if (tokens[23].equals("plains"))
+            _6.setForeground(plains);
+        else if (tokens[23] == "forest")
+            _6.setForeground(plains);
+        else if (tokens[23] == "lake")
+            _6.setForeground(lake);
+        else
+            _6.setForeground(mountains);
+
+
+        if (tokens[27].equals("plains"))
+            _7.setForeground(plains);
+        else if (tokens[27] == "forest")
+            _7.setForeground(plains);
+        else if (tokens[27] == "lake")
+            _7.setForeground(lake);
+        else
+            _7.setForeground(mountains);
+
+        if (tokens[31].equals("plains"))
+            _8.setForeground(plains);
+        else if (tokens[31] == "forest")
+            _8.setForeground(plains);
+        else if (tokens[31] == "lake")
+            _8.setForeground(lake);
+        else
+            _8.setForeground(mountains);
+
+        if (tokens[35].equals("plains"))
+            _9.setForeground(plains);
+        else if (tokens[35] == "forest")
+            _9.setForeground(plains);
+        else if (tokens[35] == "lake")
+            _9.setForeground(lake);
+        else
+            _9.setForeground(mountains);
+
+        if (tokens[39].equals("plains"))
+            _10.setForeground(plains);
+        else if (tokens[39] == "forest")
+            _10.setForeground(plains);
+        else if (tokens[39] == "lake")
+            _10.setForeground(lake);
+        else
+            _10.setForeground(mountains);
+
+        if (tokens[43].equals("plains"))
+            _11.setForeground(plains);
+        else if (tokens[43] == "forest")
+            _11.setForeground(plains);
+        else if (tokens[43] == "lake")
+            _11.setForeground(lake);
+        else
+            _11.setForeground(mountains);
+
+        if (tokens[47].equals("plains"))
+            _12.setForeground(plains);
+        else if (tokens[47] == "forest")
+            _12.setForeground(plains);
+        else if (tokens[47] == "lake")
+            _12.setForeground(lake);
+        else
+            _12.setForeground(mountains);
+
+        if (tokens[51].equals("plains"))
+            _13.setForeground(plains);
+        else if (tokens[51] == "forest")
+            _13.setForeground(plains);
+        else if (tokens[51] == "lake")
+            _13.setForeground(lake);
+        else
+            _13.setForeground(mountains);
+
+        if (tokens[55].equals("plains"))
+            _14.setForeground(plains);
+        else if (tokens[55] == "forest")
+            _14.setForeground(plains);
+        else if (tokens[55] == "lake")
+            _14.setForeground(lake);
+        else
+            _14.setForeground(mountains);
+
+        if (tokens[59].equals("plains"))
+            _15.setForeground(plains);
+        else if (tokens[59] == "forest")
+            _15.setForeground(plains);
+        else if (tokens[59] == "lake")
+            _15.setForeground(lake);
+        else
+            _15.setForeground(mountains);
+
+        if (tokens[63].equals("plains"))
+            _16.setForeground(plains);
+        else if (tokens[63] == "forest")
+            _16.setForeground(plains);
+        else if (tokens[63] == "lake")
+            _16.setForeground(lake);
+        else
+            _16.setForeground(mountains);
+
+        if (tokens[67].equals("plains"))
+            _17.setForeground(plains);
+        else if (tokens[67] == "forest")
+            _17.setForeground(plains);
+        else if (tokens[67] == "lake")
+            _17.setForeground(lake);
+        else
+            _17.setForeground(mountains);
+
+        if (tokens[71].equals("plains"))
+            _18.setForeground(plains);
+        else if (tokens[71] == "forest")
+            _18.setForeground(plains);
+        else if (tokens[71] == "lake")
+            _18.setForeground(lake);
+        else
+            _18.setForeground(mountains);
+
+        if (tokens[75].equals("plains"))
+            _19.setForeground(plains);
+        else if (tokens[75] == "forest")
+            _19.setForeground(plains);
+        else if (tokens[75] == "lake")
+            _19.setForeground(lake);
+        else
+            _19.setForeground(mountains);
+
+        if (tokens[79].equals("plains"))
+            _20.setForeground(plains);
+        else if (tokens[79] == "forest")
+            _20.setForeground(plains);
+        else if (tokens[79] == "lake")
+            _20.setForeground(lake);
+        else
+            _20.setForeground(mountains);
+
+        if (tokens[83].equals("plains"))
+            _21.setForeground(plains);
+        else if (tokens[83] == "forest")
+            _21.setForeground(plains);
+        else if (tokens[83] == "lake")
+            _21.setForeground(lake);
+        else
+            _21.setForeground(mountains);
+
+        if (tokens[87].equals("plains"))
+            _22.setForeground(plains);
+        else if (tokens[87] == "forest")
+            _22.setForeground(plains);
+        else if (tokens[87] == "lake")
+            _22.setForeground(lake);
+        else
+            _22.setForeground(mountains);
+
+        if (tokens[91].equals("plains"))
+            _23.setForeground(plains);
+        else if (tokens[91] == "forest")
+            _23.setForeground(plains);
+        else if (tokens[91] == "lake")
+            _23.setForeground(lake);
+        else
+            _23.setForeground(mountains);
+
+        if (tokens[48].equals("plains"))
+            _24.setForeground(plains);
+        else if (tokens[48] == "forest")
+            _24.setForeground(plains);
+        else if (tokens[48] == "lake")
+            _24.setForeground(lake);
+        else
+            _24.setForeground(mountains);
+
+        if (tokens[50].equals("plains"))
+            _25.setForeground(plains);
+        else if (tokens[50] == "forest")
+            _25.setForeground(plains);
+        else if (tokens[50] == "lake")
+            _25.setForeground(lake);
+        else
+            _25.setForeground(mountains);
+
+        if (tokens[52].equals("plains"))
+            _26.setForeground(plains);
+        else if (tokens[52] == "forest")
+            _26.setForeground(plains);
+        else if (tokens[52] == "lake")
+            _26.setForeground(lake);
+        else
+            _26.setForeground(mountains);
+
+        if (tokens[54].equals("plains"))
+            _27.setForeground(plains);
+        else if (tokens[54] == "forest")
+            _27.setForeground(plains);
+        else if (tokens[54] == "lake")
+            _27.setForeground(lake);
+        else
+            _27.setForeground(mountains);
+
+        if (tokens[56].equals("plains"))
+            _28.setForeground(plains);
+        else if (tokens[56] == "forest")
+            _28.setForeground(plains);
+        else if (tokens[56] == "lake")
+            _28.setForeground(lake);
+        else
+            _28.setForeground(mountains);
+
+        if (tokens[58].equals("plains"))
+            _29.setForeground(plains);
+        else if (tokens[58] == "forest")
+            _29.setForeground(plains);
+        else if (tokens[58] == "lake")
+            _29.setForeground(lake);
+        else
+            _29.setForeground(mountains);
+
+        if (tokens[60].equals("plains"))
+            _30.setForeground(plains);
+        else if (tokens[60] == "forest")
+            _30.setForeground(plains);
+        else if (tokens[60] == "lake")
+            _30.setForeground(lake);
+        else
+            _30.setForeground(mountains);
+
+        if (tokens[62].equals("plains"))
+            _31.setForeground(plains);
+        else if (tokens[62] == "forest")
+            _31.setForeground(plains);
+        else if (tokens[62] == "lake")
+            _31.setForeground(lake);
+        else
+            _31.setForeground(mountains);
+
+        if (tokens[64].equals("plains"))
+            _32.setForeground(plains);
+        else if (tokens[64] == "forest")
+            _32.setForeground(plains);
+        else if (tokens[64] == "lake")
+            _32.setForeground(lake);
+        else
+            _32.setForeground(mountains);
+
+        if (tokens[66].equals("plains"))
+            _33.setForeground(plains);
+        else if (tokens[66] == "forest")
+            _33.setForeground(plains);
+        else if (tokens[66] == "lake")
+            _33.setForeground(lake);
+        else
+            _33.setForeground(mountains);
+
+        if (tokens[68].equals("plains"))
+            _34.setForeground(plains);
+        else if (tokens[68] == "forest")
+            _34.setForeground(plains);
+        else if (tokens[68] == "lake")
+            _34.setForeground(lake);
+        else
+            _34.setForeground(mountains);
+
+        if (tokens[70].equals("plains"))
+            _35.setForeground(plains);
+        else if (tokens[70] == "forest")
+            _35.setForeground(plains);
+        else if (tokens[70] == "lake")
+            _35.setForeground(lake);
+        else
+            _35.setForeground(mountains);
+
+        if (tokens[72].equals("plains"))
+            _36.setForeground(plains);
+        else if (tokens[72] == "forest")
+            _36.setForeground(plains);
+        else if (tokens[72] == "lake")
+            _36.setForeground(lake);
+        else
+            _36.setForeground(mountains);
+
+        if (tokens[74].equals("plains"))
+            _37.setForeground(plains);
+        else if (tokens[74] == "forest")
+            _37.setForeground(plains);
+        else if (tokens[74] == "lake")
+            _37.setForeground(lake);
+        else
+            _37.setForeground(mountains);
+
+        if (tokens[76].equals("plains"))
+            _38.setForeground(plains);
+        else if (tokens[76] == "forest")
+            _38.setForeground(plains);
+        else if (tokens[76] == "lake")
+            _38.setForeground(lake);
+        else
+            _38.setForeground(mountains);
+
+        if (tokens[78].equals("plains"))
+            _39.setForeground(plains);
+        else if (tokens[78] == "forest")
+            _39.setForeground(plains);
+        else if (tokens[78] == "lake")
+            _39.setForeground(lake);
+        else
+            _39.setForeground(mountains);
+
+        if (tokens[80].equals("plains"))
+            _40.setForeground(plains);
+        else if (tokens[80] == "forest")
+            _40.setForeground(plains);
+        else if (tokens[80] == "lake")
+            _40.setForeground(lake);
+        else
+            _40.setForeground(mountains);
+
+        if (tokens[82].equals("plains"))
+            _41.setForeground(plains);
+        else if (tokens[82] == "forest")
+            _41.setForeground(plains);
+        else if (tokens[82] == "lake")
+            _41.setForeground(lake);
+        else
+            _41.setForeground(mountains);
+
+        if (tokens[84].equals("plains"))
+            _42.setForeground(plains);
+        else if (tokens[84] == "forest")
+            _42.setForeground(plains);
+        else if (tokens[84] == "lake")
+            _42.setForeground(lake);
+        else
+            _42.setForeground(mountains);
+
+        if (tokens[86].equals("plains"))
+            _43.setForeground(plains);
+        else if (tokens[86] == "forest")
+            _43.setForeground(plains);
+        else if (tokens[86] == "lake")
+            _43.setForeground(lake);
+        else
+            _43.setForeground(mountains);
+
+        if (tokens[88].equals("plains"))
+            _44.setForeground(plains);
+        else if (tokens[88] == "forest")
+            _44.setForeground(plains);
+        else if (tokens[88] == "lake")
+            _44.setForeground(lake);
+        else
+            _44.setForeground(mountains);
+
+        if (tokens[90].equals("plains"))
+            _45.setForeground(plains);
+        else if (tokens[90] == "forest")
+            _45.setForeground(plains);
+        else if (tokens[90] == "lake")
+            _45.setForeground(lake);
+        else
+            _45.setForeground(mountains);
+
+        if (tokens[92].equals("plains"))
+            _46.setForeground(plains);
+        else if (tokens[92] == "forest")
+            _46.setForeground(plains);
+        else if (tokens[92] == "lake")
+            _46.setForeground(lake);
+        else
+            _46.setForeground(mountains);
+
+        if (tokens[94].equals("plains"))
+            _47.setForeground(plains);
+        else if (tokens[94] == "forest")
+            _47.setForeground(plains);
+        else if (tokens[94] == "lake")
+            _47.setForeground(lake);
+        else
+            _47.setForeground(mountains);
+
+        if (tokens[96].equals("plains"))
+            _48.setForeground(plains);
+        else if (tokens[96] == "forest")
+            _48.setForeground(plains);
+        else if (tokens[96] == "lake")
+            _48.setForeground(lake);
+        else
+            _48.setForeground(mountains);
+
+        if (tokens[98].equals("plains"))
+            _49.setForeground(plains);
+        else if (tokens[98] == "forest")
+            _49.setForeground(plains);
+        else if (tokens[98] == "lake")
+            _49.setForeground(lake);
+        else
+            _49.setForeground(mountains);
+
+        if (tokens[100].equals("plains"))
+            _50.setForeground(plains);
+        else if (tokens[100] == "forest")
+            _50.setForeground(plains);
+        else if (tokens[100] == "lake")
+            _50.setForeground(lake);
+        else
+            _50.setForeground(mountains);
+
+        if (tokens[102].equals("plains"))
+            _51.setForeground(plains);
+        else if (tokens[102] == "forest")
+            _51.setForeground(plains);
+        else if (tokens[102] == "lake")
+            _51.setForeground(lake);
+        else
+            _51.setForeground(mountains);
+
+        if (tokens[104].equals("plains"))
+            _52.setForeground(plains);
+        else if (tokens[104] == "forest")
+            _52.setForeground(plains);
+        else if (tokens[104] == "lake")
+            _52.setForeground(lake);
+        else
+            _52.setForeground(mountains);
+
+        if (tokens[106].equals("plains"))
+            _53.setForeground(plains);
+        else if (tokens[106] == "forest")
+            _53.setForeground(plains);
+        else if (tokens[106] == "lake")
+            _53.setForeground(lake);
+        else
+            _53.setForeground(mountains);
+
+        if (tokens[108].equals("plains"))
+            _54.setForeground(plains);
+        else if (tokens[108] == "forest")
+            _54.setForeground(plains);
+        else if (tokens[108] == "lake")
+            _54.setForeground(lake);
+        else
+            _54.setForeground(mountains);
+
+        if (tokens[110].equals("plains"))
+            _55.setForeground(plains);
+        else if (tokens[110] == "forest")
+            _55.setForeground(plains);
+        else if (tokens[110] == "lake")
+            _55.setForeground(lake);
+        else
+            _55.setForeground(mountains);
+
+        if (tokens[112].equals("plains"))
+            _56.setForeground(plains);
+        else if (tokens[112] == "forest")
+            _56.setForeground(plains);
+        else if (tokens[112] == "lake")
+            _56.setForeground(lake);
+        else
+            _56.setForeground(mountains);
+
+        if (tokens[114].equals("plains"))
+            _57.setForeground(plains);
+        else if (tokens[114] == "forest")
+            _57.setForeground(plains);
+        else if (tokens[114] == "lake")
+            _57.setForeground(lake);
+        else
+            _57.setForeground(mountains);
+
+        if (tokens[116].equals("plains"))
+            _58.setForeground(plains);
+        else if (tokens[116] == "forest")
+            _58.setForeground(plains);
+        else if (tokens[116] == "lake")
+            _58.setForeground(lake);
+        else
+            _58.setForeground(mountains);
+
+        if (tokens[118].equals("plains"))
+            _59.setForeground(plains);
+        else if (tokens[118] == "forest")
+            _59.setForeground(plains);
+        else if (tokens[118] == "lake")
+            _59.setForeground(lake);
+        else
+            _59.setForeground(mountains);
+
+        if (tokens[120].equals("plains"))
+            _60.setForeground(plains);
+        else if (tokens[120] == "forest")
+            _60.setForeground(plains);
+        else if (tokens[120] == "lake")
+            _60.setForeground(lake);
+        else
+            _60.setForeground(mountains);
+
+        if (tokens[122].equals("plains"))
+            _61.setForeground(plains);
+        else if (tokens[122] == "forest")
+            _61.setForeground(plains);
+        else if (tokens[122] == "lake")
+            _61.setForeground(lake);
+        else
+            _61.setForeground(mountains);
+
+        if (tokens[124].equals("plains"))
+            _62.setForeground(plains);
+        else if (tokens[124] == "forest")
+            _62.setForeground(plains);
+        else if (tokens[124] == "lake")
+            _62.setForeground(lake);
+        else
+            _62.setForeground(mountains);
+
+        if (tokens[126].equals("plains"))
+            _63.setForeground(plains);
+        else if (tokens[126] == "forest")
+            _63.setForeground(plains);
+        else if (tokens[126] == "lake")
+            _63.setForeground(lake);
+        else
+            _63.setForeground(mountains);
+
+        if (tokens[128].equals("plains"))
+            _64.setForeground(plains);
+        else if (tokens[128] == "forest")
+            _64.setForeground(plains);
+        else if (tokens[128] == "lake")
+            _64.setForeground(lake);
+        else
+            _64.setForeground(mountains);
+*/
+
+
+    }
+
+    Boolean isMovable(ImageButton piece){
+
+        if (piece.getForeground().equals(R.drawable.forest_)){
+            return true;
+        }
+        else if (piece.getForeground().equals(R.drawable.lake_)){
+            return true;
+        }
+        else if (piece.getForeground().equals(R.drawable.mountains_)){
+            return true;
+        }
+        else if (piece.getForeground().equals(R.drawable.plains_)){
+            return true;
+        }
+        else
+            return false;
+    }
+
+    void toggleVisibility(String vision){
+        String[] tokens = vision.split(",");
+        //String[] = {A1,}
+
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("dog", "type of animal");
+        System.out.println(map.get("dog"));
+    }
+
+    void setupPubButton() {
+        Button button = (Button) findViewById(R.id.publish);
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                //publishMessage(et.getText().toString());
+                publishToAMQP("player1");
+            }
+        });
+    }
+
+    Thread subscribeThread;
+    Thread publishThread;
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        publishThread.interrupt();
+        subscribeThread.interrupt();
+    }
+
+    private BlockingDeque<String> queue = new LinkedBlockingDeque<String>();
+    void publishMessage(String message) {
+        //Adds a message to internal blocking queue
+        try {
+            Log.d("","[q] " + message);
+            queue.putLast(message);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    ConnectionFactory factory = new ConnectionFactory();
+    Channel ch;
+    private void setupConnectionFactory() {
+        String uri = "amqp://pi:raspberry@172.29.119.171:5672/test";
+        try {
+            factory.setAutomaticRecoveryEnabled(false);
+            factory.setUri(uri);
+        } catch (KeyManagementException | NoSuchAlgorithmException | URISyntaxException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    public Bitmap SetBrightness(Bitmap src, int value) {
+        // original image size
+        int width = src.getWidth();
+        int height = src.getHeight();
+        // create output bitmap
+        Bitmap bmOut = Bitmap.createBitmap(width, height, src.getConfig());
+        // color information
+        int A, R, G, B;
+        int pixel;
+
+        // scan through all pixels
+        for(int x = 0; x < width; ++x) {
+            for(int y = 0; y < height; ++y) {
+                // get pixel color
+                pixel = src.getPixel(x, y);
+                A = Color.alpha(pixel);
+                R = Color.red(pixel);
+                G = Color.green(pixel);
+                B = Color.blue(pixel);
+
+                // increase/decrease each channel
+                R += value;
+                if(R > 255) { R = 255; }
+                else if(R < 0) { R = 0; }
+
+                G += value;
+                if(G > 255) { G = 255; }
+                else if(G < 0) { G = 0; }
+
+                B += value;
+                if(B > 255) { B = 255; }
+                else if(B < 0) { B = 0; }
+
+                // apply new pixel color to output bitmap
+                bmOut.setPixel(x, y, Color.argb(A, R, G, B));
+            }
+        }
+
+        // return final image
+        return bmOut;
+    }
+
+    void subscribe(final Handler handler)
+    {
+        subscribeThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(true) {
+                    try {
+                        Connection connection = factory.newConnection();
+                        Channel channel = connection.createChannel();
+                        channel.basicQos(1);
+                        DeclareOk q = channel.queueDeclare();
+                        channel.queueBind(q.getQueue(), "amq.fanout", "chat");
+                        QueueingConsumer consumer = new QueueingConsumer(channel);
+                        channel.basicConsume("player1", false, consumer);
+                        channel.queuePurge("player1");
+
+                        // Process deliveries
+                        while (true) {
+                            QueueingConsumer.Delivery delivery = consumer.nextDelivery();
+
+
+                            String message = new String(delivery.getBody());
+                            Log.d("","[r] " + message);
+
+                            Message msg = handler.obtainMessage();
+                            Bundle bundle = new Bundle();
+
+                            bundle.putString("msg", message);
+                            msg.setData(bundle);
+                            handler.sendMessage(msg);
+                            channel.queuePurge("player1");
+                        }
+                    } catch (InterruptedException e) {
+                        break;
+                    } catch (Exception e1) {
+                        Log.d("", "Connection broken: " + e1.getClass().getName());
+                        try {
+                            Thread.sleep(4000); //sleep and then try again
+                        } catch (InterruptedException e) {
+                            break;
+                        }
+                    }
+                }
+            }
+        });
+        subscribeThread.start();
+    }
+
+
+    public void publishToAMQP(final String message)
+    {
+        final String mess = message;
+        publishThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Connection connection = factory.newConnection();
+                    ch = connection.createChannel();
+                    ch.exchangeDeclare("apptoserver", "direct");
+                    ch.basicPublish("apptoserver", "server", null, mess.getBytes());
+                    Log.d("", "[s] " + mess);
+                } catch (Exception e) {
+                    Log.d("", "[f] " + mess);
+                    e.printStackTrace();
+                }
+            }
+        });
+        publishThread.start();
+        publishThread.interrupt();
+    }
+}
